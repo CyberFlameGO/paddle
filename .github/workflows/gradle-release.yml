@@ -98,12 +98,12 @@ jobs:
           echo "VERSION=$(./gradlew properties -q | grep "version:" | awk '{print $2}')" >> $GITHUB_ENV
 
       - name: 'Get JAR Artifact'
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: 'paddle-${{env.VERSION}}-all.jar'
 
       - name: 'Download Release URL'
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4.1.7
         with:
           name: 'upload_url.txt'
 
